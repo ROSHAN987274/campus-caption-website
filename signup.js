@@ -1,13 +1,34 @@
-document.getElementById("signupForm").addEventListener("submit", function(e){
+document.getElementById("signupForm").addEventListener("submit", function(e) {
+    e.preventDefault();
 
-e.preventDefault();
+    let username = document.getElementById("username").value.trim();
+    let password = document.getElementById("password").value;
+    let msg = document.getElementById("msg");
 
-let username = document.getElementById("username").value;
-let password = document.getElementById("password").value;
+    // Clear message
+    msg.style.color = "red";
 
-localStorage.setItem("username", username);
-localStorage.setItem("password", password);
+    // 🔍 Validation
+    if (username === "" || password === "") {
+        msg.textContent = "⚠️ Please fill all fields";
+        return;
+    }
 
-document.getElementById("msg").textContent = "✅ Account Created Successfully!";
+    if (password.length < 6) {
+        msg.textContent = "⚠️ Password must be at least 6 characters";
+        return;
+    }
 
+    // 💾 Save data (for demo)
+    localStorage.setItem("username", username);
+    localStorage.setItem("password", password);
+
+    // ✅ Success message
+    msg.style.color = "green";
+    msg.textContent = "✅ Account Created Successfully! Redirecting...";
+
+    // 🔁 Redirect after 2 seconds
+    setTimeout(() => {
+        window.location.href = "index.html"; // 👈 your login page
+    }, 2000);
 });
