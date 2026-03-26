@@ -29,6 +29,6 @@ document.getElementById("signupForm").addEventListener("submit", function(e) {
 
     // 🔁 Redirect after 2 seconds
     setTimeout(() => {
-        window.location.href = "index.html"; // 👈 your login page
+        window.location.href = "index.html"; 
     }, 2000);
 });
