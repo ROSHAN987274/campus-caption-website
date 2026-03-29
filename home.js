@@ -8,6 +8,6 @@ function logout(){
 
 alert("Logged out successfully");
 
-window.location.href="project.html";
+window.location.href="index.html";
 
 }
