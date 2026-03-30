@@ -49,6 +49,6 @@ document.getElementById("resetForm").addEventListener("submit", function (e) {
 
     // Redirect after 2 seconds
     setTimeout(() => {
-        window.location.href = "project.html";
+        window.location.href = "index.html";
     }, 2000);
 });
